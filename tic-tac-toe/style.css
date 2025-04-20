@@ -1,0 +1,78 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 5px;
+    margin: 20px auto;
+    width: 370px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #444;
+}
+
+.cell.winning {
+    background-color: #41EAD4; 
+    color: black;
+    animation: winnerAnimation 0.8s infinite alternate;
+}
+
+@keyframes winnerAnimation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+.winner-banner {
+    font-size: 24px;
+    font-weight: bold;
+    color: #41EAD4;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
